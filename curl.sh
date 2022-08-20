@@ -8,4 +8,9 @@ echo ----------------------------------------------------
 echo "Routes"
 route -n
 
-
+---------------------------------------------------------
+echo "Summary"
+echo "IPs"
+ifconfig | grep inet
+echo "Gateway"
+route -n | grep UG
