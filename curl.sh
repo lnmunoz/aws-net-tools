@@ -1,9 +1,9 @@
 #!/bin/bash
-yum update  
-yum install curl & -y
-echo("IP configuration")
+#yum update  
+#yum install curl -y
+echo "IP configuration"
 ifconf
-echo ("Routes")
+echo "Routes"
 route -n
 
 
