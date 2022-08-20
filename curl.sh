@@ -3,8 +3,10 @@
 #Check linux distro
 cat /etc/os-release | grep ubuntu > ubuntu.txt 
 cat /etc/os-release | grep amazon > amazon.txt 
+cat /etc/os-release | grep alpine > alpine.txt 
 ubuntu=ubuntu.txt
 amazon=amazon.txt
+alpine=alpine.txt
 if [ -s "$ubuntu" ];then 
     echo "Tu distribución es Ubuntu"
     dpkg -l | grep curl > pkg.txt
@@ -13,6 +15,10 @@ elif [ -s "$amazon" ];then
     echo "Tu distribución es Amazon"
     yum list installed | grep curl > pkg.txt
     file=pkg.txt
+elif [ -s "$alpine" ];then 
+    echo "Tu distribución es Alpine"
+    apk info | grep alpine > pkg.txt
+    file=pkg.txt    
 else
     echo "Distribución no compatible"
 fi
