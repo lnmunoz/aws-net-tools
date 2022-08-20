@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #if [ -z "yum list installed | grep curl"]
 #Check linux distro
 cat /etc/os-release | grep ubuntu > ubuntu.txt 
