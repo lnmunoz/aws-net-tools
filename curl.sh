@@ -28,14 +28,12 @@ fi
 rm ubuntu.txt
 rm amazon.txt
 rm pkg.txt
-#yum update  
-#yum install curl -y
-echo "----------------------------------------------------"
-echo "IP configuration"
-ifconfig
-echo "----------------------------------------------------"
-echo "Routes"
-route -n
+# echo "----------------------------------------------------"
+# echo "IP configuration"
+# ifconfig
+# echo "----------------------------------------------------"
+# echo "Routes"
+# route -n
 
 echo "----------------------------------------------------"
 echo "Summary"
