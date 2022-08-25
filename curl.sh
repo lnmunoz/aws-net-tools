@@ -49,7 +49,7 @@ elif [ -s "$amazon" ];then
     fi
 elif [ -s "$alpine" ];then 
     echo "Tu distribución es Alpine"
-    apk info | grep alpine > curl.txt
+    apk info | grep curl > curl.txt
     apk info | grep busybox-extras > telnet.txt
     file=curl.txt
     file2=telnet.txt
@@ -71,7 +71,8 @@ else
 fi
 
 
-
+rm curl.txt
+rm telnet.txt
 
 # yum -y install telnet
 
