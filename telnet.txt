@@ -1,0 +1,1 @@
+ii  telnet                                                      0.17-41.2build1                     amd64        basic telnet client
