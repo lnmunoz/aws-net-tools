@@ -13,19 +13,24 @@ if [ -s "$ubuntu" ];then
     dpkg -l | grep telnet > telnet.txt
     file=curl.txt
     file2=telnet.txt
+    echo "#################################################"
     #######Chequeo de Curl############
     if [ -s "$file" ];then 
     echo "Curl está instalado "
     else
-    echo "Curl no está instalado"
+    echo "Curl no está instalado, se procede a la instalación"
     apt install curl
+    echo "Curl instalado"
+    echo "#################################################"  
     fi
     ######Chequeo de Telnet##########
     if [ -s "$file2" ];then 
     echo "Telnet está instalado "
     else
-    echo "Telnet no está instalado"
+    echo "Telnet no está instalado, se procede a la instalación"
     apt install -y telnet
+    echo "Telnet está instalado"
+    echo "#################################################"
     fi
 elif [ -s "$amazon" ];then 
     echo "Tu distribución es Amazon"
@@ -33,39 +38,48 @@ elif [ -s "$amazon" ];then
     yum list installed| grep telnet > telnet.txt
     file=curl.txt
     file2=telnet.txt
+    echo "#################################################" 
        #######Chequeo de Curl############
-    if [ -s "$file" ];then 
+    if [ -s "$file" ];then
     echo "Curl está instalado "
     else
-    echo "Curl no está instalado"
+    echo "Curl no está instalado, se procede a la instalación"
     yum -y install curl
+    echo "Curl instalado"
+    echo "#################################################"  
     fi
     ######Chequeo de Telnet##########
-    if [ -s "$file2" ];then 
+    echo "#################################################"  
+    if [ -s "$file2" ];then
     echo "Telnet está instalado "
     else
-    echo "Telnet no está instalado"
+    echo "Telnet no está instalado, se procede a la instalación"
     yum -y install telnet
     fi
+    echo "#################################################"
 elif [ -s "$alpine" ];then 
     echo "Tu distribución es Alpine"
     apk info | grep -w "curl" > curl.txt
     apk info | grep busybox-extras > telnet.txt
     file=curl.txt
     file2=telnet.txt
+    echo "#################################################"
     if [ -s "$file" ];then 
     echo "Curl está instalado "
     else
-    echo "Curl no está instalado"
-    apk add curl  
+    echo "Curl no está instalado, se procede a la instalación"
+    apk add curl
+    echo "Curl instalado"
     fi
+    echo "#################################################"     
     ######Chequeo de Telnet##########
     if [ -s "$file2" ];then 
     echo "Telnet está instalado "
     else
-    echo "Telnet no está instalado"
+    echo "Telnet no está instalado, se procede a la instalación"
     apk add busybox-extras
     fi
+    echo "#################################################"  
 else
     echo "Distribución no compatible"
 fi
